@@ -27,7 +27,7 @@ body {
 .main_form .sub_btn {
     margin-top: 20px;
 }
-.inp {
+.main_form .inp {
     border: none;
     background-color: transparent;
     border-bottom: 3px solid black;
@@ -37,7 +37,7 @@ body {
     font-weight: bold;
     color: #790000;
 }
-.inp:focus {
+.main_form .inp:focus {
     outline: none;
     background-color: transparent;
     box-shadow: none;
@@ -49,6 +49,12 @@ body {
 }
 #deathsCase {
     color: red;
+}
+#confirmedCase {
+    color: blue;
+}
+#activeCase {
+    color: #047e91;
 }
 #loading {
     display: none;

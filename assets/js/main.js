@@ -16,10 +16,19 @@ async function submitData() {
         active      = document.getElementById("activeCase"),
         deaths      = document.getElementById("deathsCase")
 
-  const finalApiUrl = covidAPI_1 + countryName + covidAPI_2 + startDate + covidAPI_3 + covidAPI_4 + endDate + covidAPI_3
+  const finalApiUrl = covidAPI_1 + countryName + covidAPI_2 + startDate + covidAPI_3 + covidAPI_4 + endDate + covidAPI_3,
+        date_start  = new Date(startDate).getTime(),
+        date_end    = new Date(endDate).getTime(),
+        date_today  = new Date().getTime()
 
   if(countryName === '' || startDate === '' || endDate === '') {
     alert("Please Fill Complete Form!!!!")
+  }
+  else if(date_end < date_start) {
+    alert("END date can't be smaller than START date!!!!")
+  }
+  else if(date_start > date_today || date_end > date_today) {
+    alert("Start/End date must not greater than today's date!!!!!")
   }
   else {
       document.getElementById("loading").style.display = "block"
@@ -45,7 +54,7 @@ async function submitData() {
           .catch(function(error) {
             console.log(error)
             document.getElementById("loading").style.display = "none"
-            alert('Error fetching data or Data not available.. TRY AGAIN......')
+            alert('Error fetching data/Data not available/Request timed out....')
           })
   }
 }
