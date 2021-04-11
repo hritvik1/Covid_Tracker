@@ -1,0 +1,19 @@
+html {
+    user-select: none;
+    scroll-behavior: smooth;
+    min-height: 100%;
+}
+body {
+    background-image: url("../img/covid_main_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.main_heading {
+    font-family: 'Kalam', cursive;
+    font-size: 4vw;
+    margin-top: 20px;
+    color: #c13224;
+    text-decoration: underline;
+}
