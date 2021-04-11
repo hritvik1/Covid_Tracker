@@ -43,3 +43,7 @@ body {
     box-shadow: none;
     color: #790000;
 }
+#res
+{
+    display: none;
+}
