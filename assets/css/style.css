@@ -50,3 +50,7 @@ body {
 #deathsCase {
     color: red;
 }
+#loading {
+    display: none;
+    margin-top: 75px;
+}

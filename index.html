@@ -12,7 +12,7 @@
     </head>
     <body>
         <h1 class="main_heading">Covid-19 Tracker</h1>
-        <form class="main_form">
+        <form class="main_form" id="main_form">
             <div class="form-group row no-gutters">
                 <div class="col-sm-4"></div>
                 <label for="countryName" class="col-sm-2 col-form-label">Country Name</label>
@@ -40,6 +40,7 @@
                 </div>
             </div>
         </form>
+        <h4 id="loading">Fetching Data... Please Wait....</h4>
         <div id="display_cases">
             <h4>Total Confirmed Cases:&nbsp;&nbsp;<span id="confirmedCase"></span> </h4>
             <h4>Total Active Cases:&nbsp;&nbsp;<span id="activeCase"></span></h4>
