@@ -6,35 +6,31 @@ const covidAPI_1 = 'https://api.covid19api.com/country/',
       covidAPI_4 = '&to='
 
 async function submitData() {
-  event.preventDefault();
+  event.preventDefault()
 
   const countryName = document.getElementById('countryName').value,
         startDate   = document.getElementById('startDate').value,
-        endDate     = document.getElementById('endDate').value
+        endDate     = document.getElementById('endDate').value,
+        confirmed   = document.getElementById("confirmedCase"),
+        active      = document.getElementById("activeCase"),
+        deaths      = document.getElementById("deathsCase")
 
-  var confirmed = document.getElementById("confirmed");
-  var active    = document.getElementById("active");
-  var deaths    = document.getElementById("deaths");
-
-
-  let finalApiUrl = covidAPI_1 + countryName + covidAPI_2 + startDate + covidAPI_3 + covidAPI_4 + endDate + covidAPI_3;
+  const finalApiUrl = covidAPI_1 + countryName + covidAPI_2 + startDate + covidAPI_3 + covidAPI_4 + endDate + covidAPI_3
 
   fetch(finalApiUrl)
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        var length=res.length;
-        var index=length-1;
+      .then((response) => response.json())
+      .then((response) => {
+          const length = response.length,
+                index  = length - 1
 
-        var c=res[index].Confirmed;
-        var a=res[index].Active;
-        var d=res[index].Deaths;
+          const conf = response[index].Confirmed,
+                act = response[index].Active,
+                dth = response[index].Deaths
 
-        confirmed.innerHTML=c;
-        active.innerHTML=a;
-        deaths.innerHTML=d;
+          confirmed.innerHTML = conf
+          active.innerHTML    = act
+          deaths.innerHTML    = dth
 
-        document.getElementById("res").style.display="block";
-
+          document.getElementById("display_cases").style.display = "block"
       })
 }

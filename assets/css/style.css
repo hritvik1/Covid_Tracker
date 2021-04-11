@@ -43,7 +43,10 @@ body {
     box-shadow: none;
     color: #790000;
 }
-#res
-{
+#display_cases {
     display: none;
+    margin-top: 70px;
+}
+#deathsCase {
+    color: red;
 }
