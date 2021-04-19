@@ -39,9 +39,15 @@ async function submitData() {
               const length = response.length,
                   index  = length - 1
 
-              const conf = response[index].Confirmed,
-                  act = response[index].Active,
-                  dth = response[index].Deaths
+              const conf_0 = response[0].Confirmed,
+                    conf_1 = response[index].Confirmed,
+                    conf   = conf_1 - conf_0,
+                    act_0  = response[0].Active,
+                    act_1  = response[index].Active,
+                    act    = act_1 - act_0,
+                    dth_0  = response[0].Deaths,
+                    dth_1  = response[index].Deaths,
+                    dth    = dth_1 - dth_0
 
               confirmed.innerHTML = conf
               active.innerHTML    = act
